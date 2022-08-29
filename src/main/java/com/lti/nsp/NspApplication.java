@@ -8,6 +8,7 @@ public class NspApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(NspApplication.class, args);
+		System.out.println("Application ON!");
 	}
 
 }
