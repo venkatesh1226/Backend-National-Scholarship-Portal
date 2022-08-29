@@ -1,4 +1,4 @@
-package com.lti.nsp.services;
+package com.lti.nsp.services.ScholarshipService;
 
 import com.lti.nsp.models.scholarship.Scholarship;
 

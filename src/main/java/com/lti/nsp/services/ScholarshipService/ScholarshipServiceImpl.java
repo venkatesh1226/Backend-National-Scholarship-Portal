@@ -1,7 +1,8 @@
-package com.lti.nsp.services;
+package com.lti.nsp.services.ScholarshipService;
 
 import com.lti.nsp.models.scholarship.Scholarship;
 import com.lti.nsp.repositories.ScholarshipRepository;
+import com.lti.nsp.services.ScholarshipService.ScholarshipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ScholarshipServiceImpl implements ScholarshipService{
+public class ScholarshipServiceImpl implements ScholarshipService {
     @Autowired
     private ScholarshipRepository repo;
 
