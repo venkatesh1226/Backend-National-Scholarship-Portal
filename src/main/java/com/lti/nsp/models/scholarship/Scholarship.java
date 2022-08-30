@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Table(name="Scholarship")
 public class Scholarship{
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private int studentId;
@@ -36,10 +36,10 @@ public class Scholarship{
     private ContactDetails contactDetails;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="scholarshipStatus",referencedColumnName = "id")
-    private ScholarshipStatus status;
+    private ScholarshipStatus scholarshipStatus;
 
     public  Scholarship(){super();}
-    public Scholarship(int id, int studentId, String schemeName, BasicDetails basicDetails, AcademicDetails academicDetails, TenthDetails tenthDetails, TwelfthDetails twelfthDetails, FeeDetails feeDetails, OtherDetails otherDetails, ContactDetails contactDetails, ScholarshipStatus status) {
+    public Scholarship(int id, int studentId, String schemeName, BasicDetails basicDetails, AcademicDetails academicDetails, TenthDetails tenthDetails, TwelfthDetails twelfthDetails, FeeDetails feeDetails, OtherDetails otherDetails, ContactDetails contactDetails, ScholarshipStatus scholarshipStatus) {
         this.id = id;
         this.studentId = studentId;
         this.schemeName = schemeName;
@@ -50,7 +50,7 @@ public class Scholarship{
         this.feeDetails = feeDetails;
         this.otherDetails = otherDetails;
         this.contactDetails = contactDetails;
-        this.status = status;
+        this.scholarshipStatus = scholarshipStatus;
     }
 
     public int getId() {
@@ -133,12 +133,12 @@ public class Scholarship{
         this.contactDetails = contactDetails;
     }
 
-    public ScholarshipStatus getStatus() {
-        return status;
+    public ScholarshipStatus getScholarshipStatus() {
+        return scholarshipStatus;
     }
 
-    public void setStatus(ScholarshipStatus status) {
-        this.status = status;
+    public void setScholarshipStatus(ScholarshipStatus scholarshipStatus) {
+        this.scholarshipStatus = scholarshipStatus;
     }
 
     @Override
@@ -154,7 +154,7 @@ public class Scholarship{
                 ", feeDetails=" + feeDetails +
                 ", otherDetails=" + otherDetails +
                 ", contactDetails=" + contactDetails +
-                ", status=" + status +
+                ", status=" + scholarshipStatus +
                 '}';
     }
 }

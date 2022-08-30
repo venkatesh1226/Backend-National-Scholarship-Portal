@@ -7,60 +7,62 @@ import javax.persistence.*;
 public class ScholarshipStatus {
 
 
-    private String isApprovedByInstitute,isApprovedByNodal,isApprovedByMinistry;
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
-    public ScholarshipStatus(){super();}
-
-    public ScholarshipStatus(String isApprovedByInstitute, String isApprovedByNodal, String isApprovedByMinistry) {
-        this.isApprovedByInstitute = isApprovedByInstitute;
-        this.isApprovedByNodal = isApprovedByNodal;
-        this.isApprovedByMinistry = isApprovedByMinistry;
+    private String approvedByInstitute, approvedByNodal, approvedByMinistry;
+    public ScholarshipStatus(){
+        super();
+        approvedByInstitute ="No";
+        approvedByNodal ="NO";
+        approvedByMinistry ="NO";
     }
 
+    public ScholarshipStatus(String approvedByInstitute, String approvedByNodal, String approvedByMinistry) {
+        this.approvedByInstitute = approvedByInstitute;
+        this.approvedByNodal = approvedByNodal;
+        this.approvedByMinistry = approvedByMinistry;
+    }
 
+    public int getId() {
+        return id;
+    }
 
-//    public Scholarship getScholarship() {
-//        return scholarship;
-//    }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-//    public void setScholarship(Scholarship scholarship) {
-//        this.scholarship = scholarship;
-//    }
-
-    public String isApprovedByInstitute() {
-        return isApprovedByInstitute;
+    public String getApprovedByInstitute() {
+        return approvedByInstitute;
     }
 
     public void setApprovedByInstitute(String approvedByInstitute) {
-        isApprovedByInstitute = approvedByInstitute;
+        this.approvedByInstitute = approvedByInstitute;
     }
 
-    public String isApprovedByNodal() {
-        return isApprovedByNodal;
+    public String getApprovedByNodal() {
+        return approvedByNodal;
     }
 
     public void setApprovedByNodal(String approvedByNodal) {
-        isApprovedByNodal = approvedByNodal;
+        this.approvedByNodal = approvedByNodal;
     }
 
-    public String isApprovedByMinistry() {
-        return isApprovedByMinistry;
+    public String getApprovedByMinistry() {
+        return approvedByMinistry;
     }
 
     public void setApprovedByMinistry(String approvedByMinistry) {
-        isApprovedByMinistry = approvedByMinistry;
+        this.approvedByMinistry = approvedByMinistry;
     }
 
     @Override
     public String toString() {
         return "ScholarshipStatus{" +
-//                "scholarshipId=" + scholarship +
-                ", isApprovedByInstitute=" + isApprovedByInstitute +
-                ", isApprovedByNodal=" + isApprovedByNodal +
-                ", isApprovedByMinistry=" + isApprovedByMinistry +
+                "id=" + id +
+                ", approvedByInstitute='" + approvedByInstitute + '\'' +
+                ", approvedByNodal='" + approvedByNodal + '\'' +
+                ", approvedByMinistry='" + approvedByMinistry + '\'' +
                 '}';
     }
 }

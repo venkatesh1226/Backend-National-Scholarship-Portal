@@ -27,5 +27,9 @@ public class ScholarshipController {
         return serve.addScholarship(s);
     }
 
+    @PutMapping("scholarships/status/{id}/{role}")
+    public Scholarship changeStatus(@PathVariable Integer id,@RequestBody String status,@PathVariable Integer role){
+        return serve.updateStatus(id,role,status);
+    }
 
 }

@@ -11,7 +11,7 @@ public class OtherDetails {
     private Integer disabilityPercentage;
     private String maritalStatus,parentsProfession;
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 //    @OneToOne(mappedBy = "otherDetails")
 //    private Scholarship scholarship;

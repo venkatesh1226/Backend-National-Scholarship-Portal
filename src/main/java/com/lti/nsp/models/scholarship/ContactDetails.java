@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name="ContactDetails")
 public class ContactDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String state,district,block,houseNo,streetNo;
     private Integer pinCode;

@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class FeeDetails {
     private Integer admissionFee,tuitionFee,otherFee;
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 //    @OneToOne(mappedBy = "feeDetails")
 //    private Scholarship scholarship;

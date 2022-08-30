@@ -8,7 +8,7 @@ import java.util.Date;
 public class AcademicDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String instituteName, currentCourse;
     private Integer presentYear;
