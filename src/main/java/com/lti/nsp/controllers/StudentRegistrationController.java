@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins ="*")
 public class StudentRegistrationController {
     @Autowired
     StudentService serve;
 
     @PostMapping(value={"/add-student"})
     StudentRegistration addStudent(@RequestBody StudentRegistration s){
-        return serve.addStudents(s);
+        s= serve.addStudents(s);
+        System.out.println("*********"+s.getId());
+        return s;
     }
 
     @GetMapping(value={"/students"})

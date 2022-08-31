@@ -4,11 +4,13 @@ import com.lti.nsp.models.scholarship.Scholarship;
 import com.lti.nsp.repositories.ScholarshipRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@CrossOrigin(origins ="*")
 public class ScholarshipServiceImpl implements ScholarshipService {
     @Autowired
     private ScholarshipRepository repo;
@@ -47,6 +49,8 @@ public class ScholarshipServiceImpl implements ScholarshipService {
             }
         }
         if(s==null) return null;
+
+        System.out.println(s.toString());
         if(role==1){
             s.getScholarshipStatus().setApprovedByInstitute(type);
         }

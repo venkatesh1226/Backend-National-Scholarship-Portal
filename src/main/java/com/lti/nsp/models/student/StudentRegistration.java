@@ -3,7 +3,15 @@ import javax.persistence.*;
   @Entity
     @Table(name="StudentRegistration")
     public class StudentRegistration {
-        @Id
+      public Integer getId() {
+          return id;
+      }
+
+      public void setId(Integer id) {
+          this.id = id;
+      }
+
+      @Id
         @GeneratedValue(strategy = GenerationType.SEQUENCE)
         private Integer id;
 

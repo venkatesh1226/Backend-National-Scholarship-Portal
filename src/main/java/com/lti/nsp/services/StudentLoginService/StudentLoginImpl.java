@@ -5,10 +5,12 @@ import com.lti.nsp.repositories.StudentLoginRepository;
 import com.lti.nsp.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
 @Service
+@CrossOrigin(origins ="*")
 public class StudentLoginImpl implements StudentLoginService{
     @Autowired
     private StudentRepository totalDetailsRepo;

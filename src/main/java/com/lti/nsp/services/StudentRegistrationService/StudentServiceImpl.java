@@ -4,12 +4,14 @@ import com.lti.nsp.models.student.StudentRegistration;
 import com.lti.nsp.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@CrossOrigin(origins ="*")
 public class StudentServiceImpl implements StudentService{
 
     @Autowired
