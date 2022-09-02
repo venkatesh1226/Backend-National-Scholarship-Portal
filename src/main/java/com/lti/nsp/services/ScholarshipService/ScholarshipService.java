@@ -8,7 +8,7 @@ public interface ScholarshipService {
     //get all scholarships applied by student
     public List<Scholarship> getScholarshipsOfStudent(int studentId);
     //get all scholarships
-    public List<Scholarship> getAllScholarships();
+    public List<Scholarship> getAllScholarships(String role);
     //add scholarship
     public Scholarship addScholarship( Scholarship s);
     //change status of scholarship
@@ -17,5 +17,6 @@ public interface ScholarshipService {
     //role = 3->ministry
     public Scholarship updateStatus(int scholarshipId, int role, String type);
     // TODO:get all students details applied from given institute
+    public List<Scholarship> getInstScholarships(String id);
 
 }

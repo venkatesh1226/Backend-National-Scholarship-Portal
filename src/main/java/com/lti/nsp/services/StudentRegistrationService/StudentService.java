@@ -9,4 +9,6 @@ public interface StudentService {
     public List<StudentRegistration> getStudents();
     public  StudentRegistration getStudent(Integer id);
     public List<StudentRegistration> getStudentByInstituteCode(String instCode);
+
+    public boolean approveStudent(Integer s,boolean status);
 }

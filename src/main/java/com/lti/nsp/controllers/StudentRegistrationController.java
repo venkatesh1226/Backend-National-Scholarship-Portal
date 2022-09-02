@@ -35,4 +35,9 @@ public class StudentRegistrationController {
         return serve.getStudentByInstituteCode(instCode);
     }
 
+    @PutMapping(value = {"approve/student/{id}"})
+    boolean approveStudent(@PathVariable Integer id,@RequestBody boolean status){
+        return serve.approveStudent(id,status);
+    }
+
 }

@@ -18,9 +18,16 @@ public class ScholarshipController {
         return serve.getScholarshipsOfStudent(sid);
     }
 
-    @GetMapping(value = {"/scholarships"})
-    public List<Scholarship> allScholarships(){
-        return serve.getAllScholarships();
+    @GetMapping(value = {"/scholarships/approval/{role}"})
+    public List<Scholarship> allScholarships(
+            @PathVariable String role
+    ){
+        return serve.getAllScholarships(role);
+    }
+
+    @GetMapping(value = {"/inst-scholarships/{id}"})
+    public List<Scholarship> getInst(@PathVariable String id){
+        return serve.getInstScholarships(id);
     }
 
     @PostMapping("/apply")
@@ -33,5 +40,6 @@ public class ScholarshipController {
 
         return serve.updateStatus(id,role,status);
     }
+
 
 }

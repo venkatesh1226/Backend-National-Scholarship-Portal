@@ -39,4 +39,16 @@ public class StudentServiceImpl implements StudentService{
         }
         return (res.size()==0)?null:res;
     }
+
+    public boolean approveStudent(Integer s,boolean status) {
+        List<StudentRegistration> all=repo.findAll();
+        for(StudentRegistration i:all){
+            if(i.getId()==s){
+                i.setAllowed(status);
+                repo.saveAll(all);
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -41,15 +41,38 @@ import javax.persistence.*;
 
         private String password;
 
-        @Override
-        public String toString() {
-            return "StudentRegistrationPojo [adhar=" + aadhar + ", district=" + district + ", name=" + name + ", dob=" + dob
-                    + ", gender=" + gender + ", mobile=" + mobile + ", email=" + email + ", bankAcc=" + bankAcc
-                    + ", bankName=" + bankName + ", state=" + state + ", ifsc=" + ifsc + ", instCode=" + instCode
-                    + ", password=" + password + "]";
-        }
+      @Override
+      public String toString() {
+          return "StudentRegistration{" +
+                  "id=" + id +
+                  ", aadhar='" + aadhar + '\'' +
+                  ", district='" + district + '\'' +
+                  ", name='" + name + '\'' +
+                  ", dob='" + dob + '\'' +
+                  ", gender='" + gender + '\'' +
+                  ", mobile='" + mobile + '\'' +
+                  ", email='" + email + '\'' +
+                  ", bankAcc='" + bankAcc + '\'' +
+                  ", bankName='" + bankName + '\'' +
+                  ", state='" + state + '\'' +
+                  ", ifsc='" + ifsc + '\'' +
+                  ", instCode='" + instCode + '\'' +
+                  ", password='" + password + '\'' +
+                  ", allowed=" + allowed +
+                  '}';
+      }
 
-        public StudentRegistration() {
+      public boolean isAllowed() {
+          return allowed;
+      }
+
+      public void setAllowed(boolean allowed) {
+          this.allowed = allowed;
+      }
+
+      private boolean allowed;
+
+      public StudentRegistration() {
             super();
             // TODO Auto-generated constructor stub
         }
